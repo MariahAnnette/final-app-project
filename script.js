@@ -8,9 +8,9 @@ let products = [
         "imageUrl": "https://i.postimg.cc/T1dhhD9Y/IMG-6140.jpg"
     },
     {
-        "price": 20,
+        "price": 30,
         "description": "This is the second description",
-        "id": 2,
+        "id": 1,
         "imageUrl": "https://i.postimg.cc/nLxRhcc1/IMG-1842.jpg"
     }
 ]
@@ -32,11 +32,19 @@ function createProduct(index) {
     image.src = product.imageUrl;
     let description = document.createElement("p");
     description.innerText = product.description;
+    let buyButton = document.createElement("button");
+    buyButton.innerText = "buy the peice above!";
+    buyButton.id = "button" + product.id;
     productDiv.appendChild(price);
     productDiv.appendChild(image);
     productDiv.appendChild(description);
+    productDiv.appendChild(buyButton);
+    productList.appendChild(productDiv);
 }
 loadProducts();
 
+function goToCart() {
+    console.log("test");
+}
 
 

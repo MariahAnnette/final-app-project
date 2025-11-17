@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!--top bar-->
     <header>
-        <a href="#gallery">Gallery</a>
-        <a href="#pricing">Pricing</a>
-        <button id="cart">cart</button>
+        <button onclick="goToCart()" id="cart">cart</button>
     </header>
     <main class="main-content">
         <!--site intro-->
@@ -43,6 +41,13 @@
         <footer>
 
         </footer>
+
+        <div id="cartOverlay">
+            <div id="viewCart">
+                <h2>Cart</h2>
+                <p>This is some more text</p>
+            </div>
+        </div>
     </main>
 </body>
 </html>

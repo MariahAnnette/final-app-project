@@ -46,3 +46,28 @@ table,h3,h1{
   margin-top: 20px;
   margin-bottom: 10px;
 }
+
+#cartOverlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.652);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+#viewCart {
+  background-color: white;
+}
+
+img {
+  width: 50%;
+  height: 50%;
+  border-style:inset;
+  border-color: (var(--primary-accent-color);
+  border-radius: 3px ;
+}
