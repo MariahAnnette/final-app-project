@@ -3,13 +3,13 @@ console.log("script started");
 let products = [
     {
         "price": 20,
-        "description": "This is the description",
+        "description": "Purple Rabbit",
         "id": 0,
         "imageUrl": "https://i.postimg.cc/T1dhhD9Y/IMG-6140.jpg"
     },
     {
         "price": 30,
-        "description": "This is the second description",
+        "description": "Alien Girl",
         "id": 1,
         "imageUrl": "https://i.postimg.cc/nLxRhcc1/IMG-1842.jpg"
     }
@@ -33,8 +33,9 @@ function createProduct(index) {
     let description = document.createElement("p");
     description.innerText = product.description;
     let buyButton = document.createElement("button");
-    buyButton.innerText = "buy the peice above!";
+    buyButton.innerText = "buy the art above!";
     buyButton.id = "button" + product.id;
+    buyButton.addEventListener("click",addToCart)
     productDiv.appendChild(price);
     productDiv.appendChild(image);
     productDiv.appendChild(description);
@@ -44,7 +45,31 @@ function createProduct(index) {
 loadProducts();
 
 function goToCart() {
-    console.log("test");
+   cartOverlay=document.getElementById("cartOverlay");
+   cartOverlay.style.display=("flex");
+}
+function exitCart() {
+   cartOverlay=document.getElementById("cartOverlay");
+   cartOverlay.style.display=("none");
 }
 
+function addToCart (event) {
+    //change button text
+    let buttonId= event.target.id;
+    let idNum = buttonId.substring(6);
+    document.getElementById("button"+idNum).innerText="added to cart";
+    //add item to cart screen
+    let viewCart=document.getElementById("viewCart");
+    let description = document.createElement("p");
+    description.innerText = products[idNum].description;
+    let image= document.createElement("img");
+    image.style.height="100px";
+    image.style.width="100px";
+    let price = document.createElement("p");
+    price.innerText = "$" + products[idNum].price;
+    image.src = products[idNum].imageUrl;
+    viewCart.appendChild(description);
+    viewCart.appendChild(image);
+    viewCart.appendChild(price);
 
+}

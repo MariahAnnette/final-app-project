@@ -54,7 +54,6 @@ table,h3,h1{
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.652);
-  display: flex;
   justify-content: center;
   align-items: center;
   display: none;
@@ -67,7 +66,12 @@ table,h3,h1{
 img {
   width: 50%;
   height: 50%;
-  border-style:inset;
-  border-color: (var(--primary-accent-color);
-  border-radius: 3px ;
+  border-style:solid;
+  border-color: var(--primary-accent-color);
+  border-radius: 5px ;
+  border-width: 3px;
 }
+#exitButton{
+  
+}
+^^^make this go on the right of the box later
