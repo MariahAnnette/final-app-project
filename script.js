@@ -73,3 +73,8 @@ function addToCart (event) {
     viewCart.appendChild(price);
 
 }
+
+function calculateTotal(){
+    
+}
+

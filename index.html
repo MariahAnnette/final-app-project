@@ -16,10 +16,11 @@
         <!--site intro-->
         <div>
             <h1>Welcome to my site!</h1>
+           <br> <hr> 
         </div >
         <!--about-->
         <h3>about</h3>
-        <p> Need a bit of color in your life? buy one of my peices to decorate as you'd like!</p>
+        <p> Need a bit of color in your life? buy one of my peices to decorate as you'd like!</p> <br>
         <!--image gallery-->
         <section id="productList">
             <!--
@@ -33,9 +34,47 @@
                 
         </section>
         <!--pricing information-->
+        <br> <hr>
             <h3>Commisions</h3>
-            <p> None of the pre-made pieces fit your fancy? order a custom one!</p>
-            
+            <p> None of the pre-made pieces fit your fancy? find out the price of a custom one!</p> <br>
+            <h2>Total: 0$</h2> <br>
+          <form id="lineFinish">
+            <label for="line">Line:</label>
+            <select id="line">
+                <option value="3">sketched</option>
+                <option value="5">clean</option>
+            </select>
+          </form> <br>
+
+           <form id="colorFinish">
+            <label for="color">Color:</label>
+            <select id="color">
+                <option value="0">no color</option>
+                <option value="3">messy color</option>
+                <option value="5">clean color</option>
+            </select>
+          </form> <br>
+
+          <form id="shadingFinish">
+            <label for="shading">Shading:</label>
+            <select id="shading">
+                <option value="0">no shading</option>
+                <option value="3">minimally shaded</option>
+                <option value="5">fully shaded</option>
+            </select>
+          </form> <br>
+
+          <form id="backgroundFinish">
+            <label for="background">Background:</label>
+            <select id="background">
+                <option value="0">solid color</option>
+                <option value="3">pattern/abstract</option>
+                <option value="5">full environment</option>
+            </select>
+          </form> <br>
+
+            <button onclick="calculateTotal()" id="calculateButton">calculate</button> 
+
         </section>
 
         <footer>

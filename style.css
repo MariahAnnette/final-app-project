@@ -20,7 +20,7 @@ header a{
 .main-content {
   max-width: 1200px;
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
   
 }
 table {
@@ -57,6 +57,7 @@ table,h3,h1{
   justify-content: center;
   align-items: center;
   display: none;
+
 }
 
 #viewCart {
@@ -71,7 +72,3 @@ img {
   border-radius: 5px ;
   border-width: 3px;
 }
-#exitButton{
-  
-}
-^^^make this go on the right of the box later
