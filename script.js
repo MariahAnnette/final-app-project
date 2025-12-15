@@ -35,10 +35,12 @@ function createProduct(index) {
     let buyButton = document.createElement("button");
     buyButton.innerText = "buy this peice!";
     buyButton.id = "button" + product.id;
+    let linebreak = document.createElement("br");
     buyButton.addEventListener("click",addToCart)
     productDiv.appendChild(description);
     productDiv.appendChild(price);
     productDiv.appendChild(image);
+    productDiv.appendChild(linebreak);
     productDiv.appendChild(buyButton);
     productList.appendChild(productDiv);
 }
@@ -54,10 +56,11 @@ function exitCart() {
 }
 
 function addToCart (event) {
-    //change button text
     let buttonId= event.target.id;
     let idNum = buttonId.substring(6);
-    document.getElementById("button"+idNum).innerText="added to cart";
+    if (document.getElementById(buttonId).innerText!="added to cart"){
+     //change button text
+    document.getElementById(buttonId).innerText="added to cart";
     //add item to cart screen
     let viewCart=document.getElementById("viewCart");
     let description = document.createElement("p");
@@ -70,8 +73,9 @@ function addToCart (event) {
     image.src = products[idNum].imageUrl;
     viewCart.appendChild(description);
     viewCart.appendChild(image);
-    viewCart.appendChild(price);
-
+    viewCart.appendChild(price);  
+    } 
+    
 }
 
 function calculateTotal(){
@@ -87,4 +91,3 @@ function calculateTotal(){
     let commissionTotal= document.getElementById("commissionTotal");
     commissionTotal.innerText= "Total: "+ totalPrice + "$";
 }
-
