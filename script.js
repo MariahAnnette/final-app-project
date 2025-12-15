@@ -2,13 +2,13 @@ console.log("script started");
 
 let products = [
     {
-        "price": 20,
+        "price": 13,
         "description": "Purple Rabbit",
         "id": 0,
         "imageUrl": "https://i.postimg.cc/T1dhhD9Y/IMG-6140.jpg"
     },
     {
-        "price": 30,
+        "price": 18,
         "description": "Alien Girl",
         "id": 1,
         "imageUrl": "https://i.postimg.cc/nLxRhcc1/IMG-1842.jpg"
@@ -33,12 +33,12 @@ function createProduct(index) {
     let description = document.createElement("p");
     description.innerText = product.description;
     let buyButton = document.createElement("button");
-    buyButton.innerText = "buy the art above!";
+    buyButton.innerText = "buy this peice!";
     buyButton.id = "button" + product.id;
     buyButton.addEventListener("click",addToCart)
+    productDiv.appendChild(description);
     productDiv.appendChild(price);
     productDiv.appendChild(image);
-    productDiv.appendChild(description);
     productDiv.appendChild(buyButton);
     productList.appendChild(productDiv);
 }
@@ -75,6 +75,16 @@ function addToCart (event) {
 }
 
 function calculateTotal(){
-    
+    let totalPrice= 0;
+    //get the select tags
+    let select = document.getElementsByTagName("select");
+    //find the value of selected options, add
+    for (let i = 0 ; i < select.length; i++) {
+        let current=select[i];
+        totalPrice+=parseInt(current.value);
+    }
+    //change text to reflect price
+    let commissionTotal= document.getElementById("commissionTotal");
+    commissionTotal.innerText= "Total: "+ totalPrice + "$";
 }
 
